@@ -1,0 +1,44 @@
+# Python environments
+.venv/
+.venv-deploy/
+venv/
+env/
+
+# Python cache and test artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Training outputs and checkpoints
+training/output/
+checkpoints/
+
+# Model archives (stored in GitHub Releases / SeaweedFS)
+models/**/*.tar.gz
+.cache/
+
+# Generated predictions (keep score JSON and task evidence)
+results/*predictions*.jsonl
+
+# Temporary files and archives
+*.tmp
+*.log
+*.zip
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# macOS and IDE files
+.DS_Store
+.vscode/
+.idea/

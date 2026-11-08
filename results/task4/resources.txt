@@ -1,0 +1,16 @@
+NAME                             READY   STATUS    RESTARTS   AGE     IP           NODE                             NOMINATED NODE   READINESS GATES
+pod/nanoparse-6bfbd4c899-2jttp   1/1     Running   0          5m50s   10.42.0.44   k3d-nanoparse-cluster-server-0   <none>           <none>
+pod/nanoparse-6bfbd4c899-g29xr   1/1     Running   0          5m50s   10.42.0.43   k3d-nanoparse-cluster-server-0   <none>           <none>
+
+NAME                TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)    AGE   SELECTOR
+service/nanoparse   ClusterIP   10.43.67.86   <none>        8000/TCP   18m   app=nanoparse
+
+NAME                        READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES                 SELECTOR
+deployment.apps/nanoparse   2/2     2            2           18m   nanoparse    nanoparse-service:v1   app=nanoparse
+
+NAME                                   DESIRED   CURRENT   READY   AGE   CONTAINERS   IMAGES                 SELECTOR
+replicaset.apps/nanoparse-6bfbd4c899   2         2         2       18m   nanoparse    nanoparse-service:v1   app=nanoparse,pod-template-hash=6bfbd4c899
+replicaset.apps/nanoparse-b4f4d6f9b    0         0         0       12m   nanoparse    nanoparse-service:v1   app=nanoparse,pod-template-hash=b4f4d6f9b
+
+NAME                                            REFERENCE              TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/nanoparse   Deployment/nanoparse   cpu: 1%/70%   1         2         2          18m

@@ -1,0 +1,47 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: teacher-worker-0
+  namespace: pipeline
+spec:
+  backoffLimit: 2
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: teacher
+          image: nanoparse-teacher:v2
+          imagePullPolicy: Never
+          env:
+            - name: SHARD_INDEX
+              value: "0"
+            - name: SHARD_COUNT
+              value: "2"
+            - name: OLLAMA_URL
+              value: "http://10.154.12.243:11434/api/generate"
+            - name: S3_URL
+              value: "http://seaweedfs-s3.data.svc.cluster.local:8333"
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: teacher-worker-1
+  namespace: pipeline
+spec:
+  backoffLimit: 2
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: teacher
+          image: nanoparse-teacher:v2
+          imagePullPolicy: Never
+          env:
+            - name: SHARD_INDEX
+              value: "1"
+            - name: SHARD_COUNT
+              value: "2"
+            - name: OLLAMA_URL
+              value: "http://10.154.12.243:11434/api/generate"
+            - name: S3_URL
+              value: "http://seaweedfs-s3.data.svc.cluster.local:8333"

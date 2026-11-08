@@ -1,0 +1,312 @@
+id,intent,text,place,review_decision,suggested_decision
+C0008,datetime_query,what is the time in perth,perth,keep,keep
+C0015,calendar_set,olly can you remind me about the gym class in two hours,gym,keep,manual_review
+C0028,datetime_query,what time is it in dallas,dallas,keep,keep
+C0036,weather_query,what is the weather like in seattle,seattle,keep,keep
+C0041,calendar_query,what events are ongoing today in biloxi,biloxi,keep,manual_review
+C0044,datetime_query,what time is it right now in pacific time,pacific,keep,keep
+C0046,alarm_set,please set alarm to my mobile phones,my mobile phones,set_null,set_null
+C0052,recommendation_events,what is happening olly,olly,set_null,manual_review
+C0058,datetime_query,time now in new york,new york,keep,keep
+C0072,calendar_set,the location is my office,my office,keep,manual_review
+C0076,datetime_query,what time is it on the west coast,west coast,keep,keep
+C0120,recommendation_events,what events are going on around my place,my place,keep,manual_review
+C0133,weather_query,may i know the weather there,there,set_null,keep
+C0137,weather_query,is it raining in toledo right now,toledo,keep,keep
+C0153,calendar_query,where is the acme meeting being held on friday,acme,manual_review,manual_review
+C0154,weather_query,what will the high be tomorrow in tucson,tucson,keep,keep
+C0158,weather_query,what is the weather for the school week,school,manual_review,keep
+C0160,recommendation_events,do i need to apply sunburn cream when i go to golf club,golf club,keep,manual_review
+C0179,recommendation_events,search local events in zip code twelve thousand one hundred and twenty one,zip code twelve thousand one hundred and twenty one,keep,manual_review
+C0183,recommendation_events,can you recommend some dog's how events going on in our city,our city,keep,manual_review
+C0190,datetime_query,how many hours gone from midnight on city,city,set_null,keep
+C0192,datetime_query,what time is it in that city,that city,manual_review,keep
+C0196,recommendation_events,local area events,local area,keep,manual_review
+C0204,recommendation_events,what's happening in town tonight,town,keep,manual_review
+C0215,recommendation_events,are there any events going on close by,close by,manual_review,manual_review
+C0228,recommendation_events,what activities are taking place in my area,my area,keep,manual_review
+C0241,alarm_set,olly alert me at three pm to go to the concert,concert,set_null,set_null
+C0247,datetime_query,in another city what time is it,another city,keep,keep
+C0262,recommendation_events,west side races,west side,keep,manual_review
+C0273,datetime_query,what's the time in china right now,china,keep,keep
+C0290,weather_query,give me the weather for merced at three pm,merced,keep,keep
+C0301,calendar_set,can you add name location to calendar,location,set_null,set_null
+C0304,calendar_query,when's the closest concert at ford's,ford's,manual_review,manual_review
+C0340,recommendation_events,running competitions on the west side,west side,keep,manual_review
+C0345,recommendation_events,tell me about some cool events going on here,here,manual_review,manual_review
+C0346,recommendation_events,tell me about activities in my area this weekend,my area,keep,manual_review
+C0356,recommendation_events,need to carry a umbrella this evening,this evening,set_null,manual_review
+C0363,datetime_query,what is the current time in london,london,keep,keep
+C0364,weather_query,accumulation of snow predictions in buffalo,buffalo,keep,keep
+C0375,datetime_query,what is the time in the midwest right now,midwest,keep,keep
+C0376,calendar_set,set a reminder for dinner at six pm on wednesday at bonefish grill,bonefish grill,keep,manual_review
+C0415,calendar_query,who am i meeting at work tomorrow,work,keep,manual_review
+C0418,datetime_query,what time is it in the eastern half of the us right now,eastern half of the us,keep,keep
+C0419,weather_query,is it sunny in gonbad now,gonbad,keep,keep
+C0420,weather_query,am i going to need to bring an umbrella to work today,work,keep,keep
+C0429,recommendation_events,is the balloon festival this weekend,balloon festival,set_null,manual_review
+C0435,recommendation_events,what plays are showing at the theatre,theatre,keep,manual_review
+C0438,datetime_query,what is the time over in florida,florida,keep,keep
+C0443,recommendation_events,what can i do tonight in the city,city,manual_review,manual_review
+C0448,recommendation_events,what's happening near me this week,near me,manual_review,manual_review
+C0452,recommendation_events,is it a good day to go to the beach,the beach,keep,manual_review
+C0463,recommendation_events,tell me all local events,local,set_null,manual_review
+C0481,calendar_set,set me a reminder for the get together with the women's club on sunday after church,women's club,manual_review,manual_review
+C0488,recommendation_events,food will be given at the exhibition,exhibition,manual_review,manual_review
+C0500,datetime_query,give me the local time of london,london,keep,keep
+C0510,calendar_query,what is the schedule of the next maggie rogers concert,maggie rogers concert,set_null,manual_review
+C0516,calendar_query,what is the location of my work project meeting,my work project meeting,set_null,manual_review
+C0520,datetime_query,at what time does the next redso game start,redso game,set_null,keep
+C0530,recommendation_events,are there any mma events coming to golden one center,golden one center,keep,manual_review
+C0532,weather_query,is there any chance of rains in mysore to beat the heat,mysore,keep,keep
+C0542,datetime_query,what time is it now in g. m. t.,g. m. t.,keep,keep
+C0544,weather_query,weather in florida this week,florida,keep,keep
+C0552,recommendation_events,which event should i attend in my area,my area,keep,manual_review
+C0555,calendar_set,avinash go with me on fifth april movie commando,movie commando,set_null,manual_review
+C0557,recommendation_events,what events are happening near me,near me,manual_review,manual_review
+C0559,weather_query,is it raining in barcelona,barcelona,keep,keep
+C0563,weather_query,what will the weather be in chicago today,chicago,keep,keep
+C0568,calendar_set,create calendar event with my son,my son,set_null,set_null
+C0582,datetime_query,what time is it in karachi right now,karachi,keep,keep
+C0583,weather_query,what is the weather in utah,utah,keep,keep
+C0603,calendar_query,how are things looking for the meeting with john,john,set_null,set_null
+C0615,recommendation_events,any good drama released recently in the cinema,cinema,keep,manual_review
+C0622,recommendation_events,what's going on in la,la,keep,manual_review
+C0640,recommendation_events,where should i go for dinner in san francisco tonight,san francisco,keep,manual_review
+C0644,weather_query,please show me the local weather,local,set_null,keep
+C0656,calendar_set,will you put in my calendar that john c and his wife are meeting with us at four pm tomorrow,with us,set_null,set_null
+C0663,calendar_set,mike and jack should be added to festival calendar,festival,set_null,manual_review
+C0677,recommendation_events,can you tell me about any local events coming up,local,set_null,manual_review
+C0681,weather_query,olly climate details now,olly,set_null,keep
+C0697,datetime_query,current time in ny,ny,keep,keep
+C0707,weather_query,ask my friend hows the climate there,there,manual_review,keep
+C0709,datetime_query,time wellington nz,wellington nz,keep,keep
+C0713,recommendation_events,where is the party,party,manual_review,manual_review
+C0724,calendar_set,add to calendar october first at two pm lunch with ann,lunch with ann,set_null,manual_review
+C0738,datetime_query,what is paris time,paris,keep,keep
+C0766,calendar_remove,remove wyatt's birthday party from my calendar,my calendar,set_null,set_null
+C0771,datetime_query,what is the current time in delhi,delhi,keep,keep
+C0772,weather_query,i wish to know the weather in s.f.,s.f.,keep,keep
+C0802,recommendation_events,can you find me a street fair in the neighborhood,neighborhood,keep,manual_review
+C0803,datetime_query,what time is it in moscow now,moscow,keep,keep
+C0827,recommendation_events,tell me what's going on in my city,my city,keep,manual_review
+C0850,weather_query,will i need a jacket after ten pm in my area,my area,keep,keep
+C0881,datetime_query,what is the timer in japan,japan,keep,keep
+C0885,calendar_set,set a meeting on wednesday at three pm in room,room,manual_review,manual_review
+C0898,datetime_query,hey olly what time is it in london now,london,keep,keep
+C0901,datetime_query,olly what time is it in denver,denver,keep,keep
+C0916,recommendation_events,should i wear a coat to the pool,pool,keep,manual_review
+C0918,calendar_set,please add brunch with erin to my calendar at the diner,the diner,keep,manual_review
+C0920,weather_query,what will the weather conditions of lucknow on ninth february two thousand and seventeen,lucknow,keep,keep
+C0930,recommendation_events,what is worth doing around here,here,manual_review,manual_review
+C0939,recommendation_events,events in the local area,local area,keep,manual_review
+C0940,calendar_set,please add concert at summerfest to calendar,summerfest,manual_review,manual_review
+C0968,recommendation_events,what are the concerts happening nearby,nearby,manual_review,manual_review
+C0970,datetime_query,what is the time in dubai,dubai,keep,keep
+C0971,calendar_set,book a meeting with chelsea,chelsea,set_null,manual_review
+C0973,calendar_set,hello google take me to google calendar please,google,set_null,set_null
+C0993,weather_query,state the weather in our city,our city,keep,keep
+C1002,datetime_query,current time in london,london,keep,keep
+C1008,recommendation_events,which things should i do when i visit the yellowstone national park,yellowstone national park,keep,manual_review
+C1009,datetime_query,what time is it in chicago,chicago,keep,keep
+C1014,recommendation_events,what events are happening in seattle this weekend,seattle,keep,manual_review
+C1015,recommendation_events,are there any local events being put on tonight,local,set_null,manual_review
+C1018,weather_query,what's the weather like for the next week in chicago,chicago,keep,keep
+C1026,datetime_query,what time is it in dooa,dooa,manual_review,keep
+C1041,calendar_set,add on calendar birthday party tomorrow two pm for jane at her house,her house,keep,manual_review
+C1046,alarm_set,notify me an hour before my two pm appointment at the car dealership,car dealership,keep,manual_review
+C1058,weather_query,what is the forecast in me area today,me area,manual_review,keep
+C1104,weather_query,whats it like in chicago,chicago,keep,keep
+C1122,weather_query,is it hot and muggy or warm and humid in the bayou today,bayou,keep,keep
+C1126,datetime_query,what time am i supposed to pick up john again,john,set_null,set_null
+C1128,datetime_query,what is the time central,central,manual_review,keep
+C1135,datetime_query,what hour of the day is it in dallas,dallas,keep,keep
+C1173,calendar_set,add a party tonight in my remainder,my remainder,set_null,set_null
+C1188,recommendation_events,show me upcoming events in chicago,chicago,keep,manual_review
+C1190,calendar_query,what are all the event in area,area,manual_review,manual_review
+C1198,calendar_set,add my meeting in google office tomorrow ten am,google office,keep,manual_review
+C1204,weather_query,give me the weekly weather near me,near me,manual_review,keep
+C1205,weather_query,olly accumulation of snow predictions in buffalo,buffalo,keep,keep
+C1211,recommendation_events,what's going on around the neighborhood,neighborhood,keep,manual_review
+C1221,weather_query,show me tomorrow's weather in this area,this area,keep,keep
+C1227,calendar_set,recollect next week gm's meeting,gm's meeting,set_null,manual_review
+C1234,calendar_set,please give me notice when i need to leave for the conference,conference,set_null,manual_review
+C1237,calendar_set,can you remind me about the gym class in two hours,gym,keep,manual_review
+C1261,weather_query,compare weather home and san antonio texas,san antonio texas,keep,keep
+C1267,recommendation_events,fun stuff to do near me,near me,manual_review,manual_review
+C1277,weather_query,what is the weather in london,london,keep,keep
+C1297,calendar_query,who and why is on at the theater tonight,theater,keep,manual_review
+C1302,recommendation_events,what is open late in la olly,la olly,manual_review,manual_review
+C1306,recommendation_events,is there anything happening in town this weekend,town,keep,manual_review
+C1308,datetime_query,what time is it in chicago right now,chicago,keep,keep
+C1324,calendar_set,in the calendar put that we are having dinner with frank at eight pm on the ninth of august,frank,set_null,set_null
+C1332,datetime_query,whats the time in chicago,chicago,keep,keep
+C1350,datetime_query,what time is it in boston,boston,keep,keep
+C1369,weather_query,check the weather of city on list starts with a,city on list,manual_review,keep
+C1373,weather_query,whats the weather like in chicago,chicago,keep,keep
+C1381,calendar_set,i need to remember to get to the shops before they close,shops,keep,manual_review
+C1384,weather_query,what's the weather in chicago,chicago,keep,keep
+C1390,datetime_query,tell me the current time in central time,central,keep,keep
+C1392,datetime_query,what is the time in la,la,keep,keep
+C1400,recommendation_events,olly name me some current events in the bay area,bay area,keep,manual_review
+C1401,weather_query,tell me the weather in shanghai,shanghai,keep,keep
+C1420,recommendation_events,what is happening around here,here,manual_review,manual_review
+C1440,datetime_query,what time is it right now in new york,new york,keep,keep
+C1447,datetime_query,what time is it in this city,this city,manual_review,keep
+C1458,recommendation_events,i would like to know the events happening around here,here,manual_review,manual_review
+C1463,calendar_set,remind me at location,location,set_null,set_null
+C1475,weather_query,what is the weather near me,near me,manual_review,keep
+C1477,datetime_query,what is the time in london,london,keep,keep
+C1518,weather_query,what is the weather in columbus,columbus,keep,keep
+C1525,recommendation_events,tell me about the latest events going around my city,my city,keep,manual_review
+C1526,weather_query,weather in leisure city,leisure city,keep,keep
+C1535,datetime_query,tell me the time in boston,boston,keep,keep
+C1568,datetime_query,can you tell me the time at san francisco,san francisco,,keep
+C1570,datetime_query,when is the kiss concert,kiss concert,,keep
+C1582,calendar_set,should i go to the market day after tomorrow,market,,manual_review
+C1588,recommendation_events,alexa please search for events near me,near me,,manual_review
+C1589,weather_query,weather in bristol v. t.,bristol,,keep
+C1597,datetime_query,may i know the time in london,london,,keep
+C1598,datetime_query,whats the time in london,london,,keep
+C1612,weather_query,what is the forecast in my area today,my area,,keep
+C1640,recommendation_events,more about the concert in st pete,st pete,,manual_review
+C1643,calendar_set,olly i want to go to the outdoor movie screening this weekend remind me,outdoor movie screening,,manual_review
+C1647,recommendation_events,should i wear winter boots when i go to the store,store,,manual_review
+C1656,recommendation_events,what events are planned in my area,my area,,manual_review
+C1671,recommendation_events,show upcoming local events,local,,manual_review
+C1685,calendar_set,call person a for meeting,person a,set_null,set_null
+C1691,datetime_query,time in chicago,chicago,,keep
+C1698,weather_query,what's the current weather in new jersey,new jersey,,keep
+C1700,weather_query,what is the climate here today,here,,keep
+C1709,recommendation_events,any free events in la today,la,,manual_review
+C1714,recommendation_events,please search for local events,local,,manual_review
+C1718,datetime_query,tell me the date of inauguration of my friend sams business,my friend sams business,,keep
+C1739,calendar_set,new event lunch outback,outback,,manual_review
+C1743,calendar_remove,delete lunch with michael,with michael,set_null,set_null
+C1752,calendar_set,send a calendar appointment to jan,jan,,manual_review
+C1760,recommendation_events,what kind of free activities can i do locally this week,local,,manual_review
+C1766,datetime_query,what time is it in another city,another city,,keep
+C1794,recommendation_events,what is this event is called which happening my area,my area,,manual_review
+C1795,weather_query,what is the weather near me this week,near me,,keep
+C1801,calendar_set,add my mom to calendar for monday brunch,my mom,set_null,set_null
+C1805,recommendation_events,searching on holidays in my location,my location,,manual_review
+C1815,datetime_query,what time is it in honolulu,honolulu,,keep
+C1819,alarm_set,alert me at three pm to go to the concert,concert,set_null,set_null
+C1826,datetime_query,tell me the current time in ottawa,ottawa,,keep
+C1832,calendar_set,add repeating event on saturday on seven am named cinema time,cinema,,manual_review
+C1833,recommendation_events,olly search events and meetups for central park west,central park west,,manual_review
+C1843,recommendation_events,are there any events happening in town,town,,manual_review
+C1844,calendar_set,can you add my business meeting to the work calendar,work,,manual_review
+C1845,datetime_query,what time is it in central standard time,central standard time,,keep
+C1883,weather_query,weather of chicago,chicago,,keep
+C1936,weather_query,what is the weather in paris,paris,,keep
+C1937,weather_query,what is today's climate here,here,,keep
+C1938,weather_query,temperature in augusta ga,augusta ga,,keep
+C1940,datetime_query,new york time,new york,,keep
+C1941,calendar_set,set reminder for seven am for the city team meeting,city team meeting,,manual_review
+C1949,datetime_query,what time is the cantonese dog festival,cantonese dog festival,,keep
+C1953,recommendation_events,what is the event name going in my area,my area,,manual_review
+C1956,recommendation_events,what is there to do here,here,,manual_review
+C1960,calendar_set,please remind me to pickup john at school today at one pm,school,,manual_review
+C1965,datetime_query,tell me the time in another city in us,us,,keep
+C1997,weather_query,what is the weather in home town,home town,,keep
+C2039,recommendation_events,is there any carnival taking place in our area,our area,,manual_review
+C2041,calendar_set,set a reminder for next saturday go to the library at five o'clock,the library,,manual_review
+C2045,weather_query,what is the current weather in denver,denver,,keep
+C2051,recommendation_events,searching for any special holidays for us country,us country,,manual_review
+C2058,weather_query,what was the temperature when i was in the park,park,,keep
+C2077,recommendation_events,find local events,local,,manual_review
+C2084,calendar_set,when am i supposed to meet barbara for lunch this week,barbara,set_null,set_null
+C2091,datetime_query,what time is it in florida,florida,,keep
+C2095,weather_query,weather boston ma,boston,,keep
+C2099,datetime_query,show me the time now in boston,boston,,keep
+C2100,calendar_set,add meet with dave at subway on weber on four april at five pm,subway on weber,,manual_review
+C2107,recommendation_events,are there any interesting events going on around my location,my location,,manual_review
+C2113,recommendation_events,what concerts are due nearby,nearby,,manual_review
+C2133,recommendation_events,find events near by,near by,,manual_review
+C2156,datetime_query,date in new york,new york,,keep
+C2157,datetime_query,get me the time in london now,london,,keep
+C2180,datetime_query,what is the time in australia right now,australia,,keep
+C2181,weather_query,what is the weather forecast for chicago,chicago,,keep
+C2211,recommendation_events,show me upcoming events in this area,this area,,manual_review
+C2221,recommendation_events,what bands are playing close by,close by,,manual_review
+C2223,calendar_set,add reminder today evening to collect the parcel from jakes bristo,jakes bristo,,manual_review
+C2224,weather_query,what is home town weather,home town,,keep
+C2225,weather_query,what will be tomorrow's weather in this location,this location,,keep
+C2227,recommendation_events,should i pick up some defrosting salt at the store,store,,manual_review
+C2231,datetime_query,what time is it right now in australia,australia,,keep
+C2256,weather_query,tell me what was the temperature in our city at twelve pm,our city,,keep
+C2257,calendar_remove,remove meeting at dubai,dubai,,manual_review
+C2286,recommendation_events,are there any events going on at the library this week,the library,,manual_review
+C2304,recommendation_events,make a to do list while visiting the yellow stone national park,yellow stone national park,,manual_review
+C2305,calendar_set,add mike and jack to festival calendar,festival,,manual_review
+C2307,recommendation_events,what should i do in san diego,san diego,,manual_review
+C2320,calendar_set,add my sister visiting to my family calendar,my sister,set_null,set_null
+C2336,recommendation_events,is there any carnival in our place today,our place,,manual_review
+C2338,datetime_query,what will be the time now in washington,washington,,keep
+C2359,alarm_query,what alarms are set in the house,house,,manual_review
+C2360,recommendation_events,list ongoing events near me,near me,,manual_review
+C2374,recommendation_events,there's a good band playing tonight at nine at jazz bar i want to go,jazz bar,,manual_review
+C2378,datetime_query,what time is it in switzerland,switzerland,,keep
+C2380,datetime_query,tell me the time in moscow,moscow,,keep
+C2383,calendar_set,remind me to tweet at this company,this company,,manual_review
+C2389,weather_query,weather in dhaka,dhaka,,keep
+C2403,datetime_query,let me know the time in india,india,,keep
+C2405,recommendation_events,list all the events being held in the vicinity,vicinity,,manual_review
+C2412,weather_query,weather in homestead,homestead,,keep
+C2431,calendar_set,schedule an event in my calendar for the pool party at jack's place this saturday,jack's place,,manual_review
+C2458,recommendation_events,what is open late in la,la,,manual_review
+C2459,recommendation_events,olly what fun stuff can i do around here,here,,manual_review
+C2463,datetime_query,what time is it in england,england,,keep
+C2468,recommendation_events,olly tell me about some cool events going on here,here,,manual_review
+C2475,recommendation_events,i need something fun to do this weekend nearby can you give me ideas,nearby,,manual_review
+C2477,calendar_set,please schedule an appointment at my doctor for a prostate exam on friday,my doctor,,manual_review
+C2479,calendar_remove,remove chat with allan,allan,set_null,set_null
+C2484,calendar_set,set a meeting with hongbin,hongbin,,manual_review
+C2503,weather_query,what is today's weather in springfield,springfield,,keep
+C2520,calendar_set,please add meeting at work to calendar,work,,manual_review
+C2525,recommendation_events,any festivals in town at this time or in the coming week,town,,manual_review
+C2538,recommendation_events,any runs on the west side,west side,,manual_review
+C2543,weather_query,is it snowing in seattle,seattle,,keep
+C2548,recommendation_events,show local events near me,near me,,manual_review
+C2560,datetime_query,what is the time in the pacific time zone at this very moment,pacific time zone,,keep
+C2575,weather_query,what's the weather doing in grand rapids mi now,grand rapids mi,,keep
+C2579,weather_query,is it cold weather there,there,,keep
+C2585,recommendation_events,what is happening in my area,my area,,manual_review
+C2586,calendar_remove,cancel sam's party,sam's party,,manual_review
+C2587,recommendation_events,hit me up with some exciting events in the bay area,bay area,,manual_review
+C2596,datetime_query,what is the current time in new york,new york,,keep
+C2602,calendar_remove,erase my appointment with ted,my appointment with ted,,manual_review
+C2626,recommendation_events,whats happening in ny,ny,,manual_review
+C2633,calendar_set,time time is the holiday party at the office,the office,,manual_review
+C2651,calendar_set,add a new event for tomorrow at five pm meet sarah at the gym,the gym,,manual_review
+C2668,recommendation_events,are there any special events in my town,my town,,manual_review
+C2685,datetime_query,the time in cairo please,cairo,,keep
+C2687,calendar_set,can you please add my dinner reservations to my calendar,my dinner reservations,,manual_review
+C2694,datetime_query,what time is it now in the eastern time zone,eastern time zone,,keep
+C2697,calendar_set,please set an event at ten am one month and two days from now to have a garage sale at my house,my house,,manual_review
+C2703,calendar_query,list events in ny,ny,,manual_review
+C2704,calendar_set,call linda and remind her to pick me up for bowling,bowling,,manual_review
+C2765,weather_query,is it rainy in my area,my area,,keep
+C2768,calendar_query,what day and time is the acme meeting in san diego california,san diego california,,manual_review
+C2770,datetime_query,what is the current time in boston,boston,,keep
+C2783,datetime_query,tell me the time in canberra,canberra,,keep
+C2804,weather_query,home town weather,home town,,keep
+C2810,datetime_query,tell me the time in jakarta,jakarta,,keep
+C2812,recommendation_events,what is the event name going in me area,me area,,manual_review
+C2823,datetime_query,what is the time in london right now,london,,keep
+C2827,calendar_set,place a birthday party with ale ross and amy in my calendar,my calendar,set_null,set_null
+C2839,datetime_query,is it noon in paris,paris,,keep
+C2842,datetime_query,is the time different in moscow,moscow,,keep
+C2866,datetime_query,please let me know the current time at london,london,,keep
+C2873,datetime_query,what is the time difference between here and dakar,here and dakar,,keep
+C2892,datetime_query,tell me the time in india,india,,keep
+C2899,datetime_query,please provide current time in india,india,,keep
+C2902,datetime_query,what's the current time in new york,new york,,keep
+C2911,calendar_set,olly set a lunch date for next tuesday at noon with sarah at black angus,black angus,,manual_review
+C2920,datetime_query,what time is it in mountain standard time,mountain standard time,,keep
+C2922,datetime_query,what time is it in dubai,dubai,,keep
+C2957,datetime_query,what time i sit in china right now,china,,keep
+C2965,datetime_query,what is the current central time,central,,keep
+C2980,calendar_remove,cancel future event from place i worked,i worked,,manual_review
+C2996,datetime_query,what time is it in cleveland ohio,cleveland ohio,,keep

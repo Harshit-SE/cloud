@@ -1,0 +1,23 @@
+# ==============================================================================
+# AeroParse Student Model Configuration (Sequence-Level Distillation)
+# ==============================================================================
+
+model_name: "EleutherAI/pythia-70m"
+train_file: "datasets/v1/train.jsonl"
+max_train_samples: 1500
+
+# Required parameter items for Task 2 evaluation
+seed: 42
+learning_rate: 0.00005
+batch_size: 4
+epochs: 3
+max_seq_length: 256
+weight_decay: 0.01
+device: "cpu"
+
+library_versions:
+  python: "3.11"
+  torch: "2.15.0"
+  transformers: "4.57.6"
+  tokenizers: "0.22.2"
+  pyyaml: "6.0.3"

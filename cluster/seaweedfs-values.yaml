@@ -1,0 +1,33 @@
+master:
+  enabled: true
+  replicas: 1
+  data:
+    type: persistentVolumeClaim
+    size: 1Gi
+    storageClass: local-path
+
+volume:
+  enabled: true
+  replicas: 1
+  dataDirs:
+    - name: data1
+      type: persistentVolumeClaim
+      size: 5Gi
+      storageClass: local-path
+      maxVolumes: 0
+
+filer:
+  enabled: true
+  replicas: 1
+  data:
+    type: persistentVolumeClaim
+    size: 1Gi
+    storageClass: local-path
+
+s3:
+  enabled: true
+  replicas: 1
+  enableAuth: false
+  createBuckets:
+    - name: datasets
+    - name: models

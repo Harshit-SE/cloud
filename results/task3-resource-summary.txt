@@ -1,0 +1,28 @@
+Task 3 - Resource Limit Test
+
+Image: nanoparse-service:v1
+Architecture: linux/arm64
+Image disk usage: 1.66 GB
+PyTorch: 2.15.0+cpu
+CUDA available: False
+
+Container limits:
+CPU: 1 core
+Memory: 1 GiB (1073741824 bytes)
+
+Test:
+Sequential requests: 50
+HTTP 200: 50
+Failed requests: 0
+Peak memory: 773095424 bytes (737.4 MiB)
+OOMKilled: false
+Container running after test: true
+
+API tests:
+GET /healthz: HTTP 200
+GET /readyz: HTTP 200 after model loading
+POST /parse: HTTP 200, valid four-key JSON
+Response headers: X-Model-Version and X-Served-By verified
+FAULT_INJECT=1: HTTP 500
+Error body: {"error":"invalid_model_output"}
+Model downloaded from SeaweedFS at startup.

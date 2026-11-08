@@ -1,0 +1,161 @@
+name: AeroParse CI Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      model_source:
+        description: "Select model evaluation target"
+        required: true
+        type: choice
+        options:
+          - trained
+          - untrained
+        default: trained
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: 1. Code Compilation and Linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install linter
+        run: pip install ruff
+
+      - name: Verify Python compilation and lint syntax
+        run: |
+          python -m compileall -q service tools training worker tests
+          ruff check --select E9,F63,F7,F82 service tools training worker tests
+
+  unit-tests:
+    name: 2. Automated Unit Tests
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Execute unit test discovery
+        run: python -m unittest discover -s tests -v
+
+  evaluation:
+    name: 3. Model Evaluation & Quality Gate
+    needs: unit-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install evaluation dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install torch==2.15.0 --index-url https://download.pytorch.org/whl/cpu
+          pip install transformers==4.57.6 tokenizers safetensors
+
+      - name: Download model release asset
+        run: |
+          PRIMARY_URL="${{ github.server_url }}/${{ github.repository }}/releases/download/v1.0/pythia-70m-v1.tar.gz"
+          FALLBACK_URL="https://github.com/rahul-singh92/NanoParse/releases/download/v1.0/pythia-70m-v1.tar.gz"
+
+          echo "Attempting download from primary release URL: $PRIMARY_URL"
+          if ! curl -fL "$PRIMARY_URL" -o model.tar.gz; then
+            echo "Falling back to reference release asset: $FALLBACK_URL"
+            curl -fL "$FALLBACK_URL" -o model.tar.gz
+          fi
+
+          echo "3b098817b3ab49b30b44cd2b6086b71b1ef7645542451883d54dfcfebab47bfe  model.tar.gz" | sha256sum -c -
+
+          mkdir -p /tmp/aeroparse-model
+          tar -xzf model.tar.gz -C /tmp/aeroparse-model
+
+      - name: Run inference predictions
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          PREDICT_FLAGS=()
+          if [ "${{ github.event.inputs.model_source }}" = "untrained" ]; then
+            PREDICT_FLAGS+=(--random-init)
+          fi
+
+          python tools/predict.py \
+            --model-dir /tmp/aeroparse-model \
+            --output results/ci_predictions.jsonl \
+            "${PREDICT_FLAGS[@]}"
+
+      - name: Evaluate validation score
+        run: |
+          python tools/score.py \
+            results/ci_predictions.jsonl \
+            data/validation.jsonl \
+            --out results/ci_score.json
+
+          python - << 'EOF'
+          import json
+          with open("results/ci_score.json") as f:
+              metrics = json.load(f)
+          validity = metrics.get("json_validity", 0.0)
+          print(f"Evaluated JSON Validity: {validity}%")
+          if validity < 95.0:
+              print("Notice: Current validation JSON validity is below 95% threshold.")
+          else:
+              print("Quality threshold met: JSON validity >= 95%.")
+          EOF
+
+      - name: Enforce strict 95% quality gate
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          python tools/score.py \
+            results/ci_predictions.jsonl \
+            data/validation.jsonl \
+            --out results/ci_score.json \
+            --min-validity 95
+
+      - name: Archive evaluation results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aeroparse-evaluation-artifacts
+          path: |
+            results/ci_predictions.jsonl
+            results/ci_score.json
+          if-no-files-found: warn
+
+  secret-scan:
+    name: 4. Gitleaks Secret Scanning
+    needs: evaluation
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Scan repository with Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,56 @@
+Name:                   nanoparse
+Namespace:              app
+CreationTimestamp:      Sun, 01 Nov 2026 22:57:12 +0530
+Labels:                 <none>
+Annotations:            deployment.kubernetes.io/revision: 3
+Selector:               app=nanoparse
+Replicas:               2 desired | 2 updated | 2 total | 2 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  0 max unavailable, 1 max surge
+Pod Template:
+  Labels:  app=nanoparse
+  Containers:
+   nanoparse:
+    Image:      nanoparse-service:v1
+    Port:       8000/TCP
+    Host Port:  0/TCP
+    Limits:
+      cpu:     1
+      memory:  1Gi
+    Requests:
+      cpu:      500m
+      memory:   512Mi
+    Liveness:   http-get http://:8000/healthz delay=20s timeout=3s period=10s #success=1 #failure=3
+    Readiness:  http-get http://:8000/readyz delay=5s timeout=3s period=5s #success=1 #failure=120
+    Environment:
+      MODEL_URI:              s3://models/v1/pythia-70m-v1.tar.gz
+      MODEL_VERSION:          v1
+      S3_ENDPOINT:            http://seaweedfs-s3.data.svc.cluster.local:8333
+      MAX_NEW_TOKENS:         100
+      POD_NAME:                (v1:metadata.name)
+      AWS_ACCESS_KEY_ID:      <set to the key 'access-key' in secret 'seaweedfs-s3-credentials'>  Optional: false
+      AWS_SECRET_ACCESS_KEY:  <set to the key 'secret-key' in secret 'seaweedfs-s3-credentials'>  Optional: false
+    Mounts:                   <none>
+  Volumes:                    <none>
+  Node-Selectors:             <none>
+  Tolerations:                <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Progressing    True    NewReplicaSetAvailable
+  Available      True    MinimumReplicasAvailable
+OldReplicaSets:  nanoparse-b4f4d6f9b (0/0 replicas created)
+NewReplicaSet:   nanoparse-6bfbd4c899 (2/2 replicas created)
+Events:
+  Type    Reason             Age                From                   Message
+  ----    ------             ----               ----                   -------
+  Normal  ScalingReplicaSet  18m                deployment-controller  Scaled up replica set nanoparse-6bfbd4c899 from 0 to 2
+  Normal  ScalingReplicaSet  12m                deployment-controller  Scaled up replica set nanoparse-b4f4d6f9b from 0 to 1
+  Normal  ScalingReplicaSet  12m (x2 over 15m)  deployment-controller  Scaled down replica set nanoparse-6bfbd4c899 from 2 to 1
+  Normal  ScalingReplicaSet  12m                deployment-controller  Scaled up replica set nanoparse-b4f4d6f9b from 1 to 2
+  Normal  ScalingReplicaSet  12m                deployment-controller  Scaled down replica set nanoparse-6bfbd4c899 from 1 to 0
+  Normal  ScalingReplicaSet  10m                deployment-controller  Scaled up replica set nanoparse-6bfbd4c899 from 0 to 1
+  Normal  ScalingReplicaSet  10m (x2 over 15m)  deployment-controller  Scaled up replica set nanoparse-6bfbd4c899 from 1 to 2
+  Normal  ScalingReplicaSet  10m                deployment-controller  Scaled down replica set nanoparse-b4f4d6f9b from 2 to 1
+  Normal  ScalingReplicaSet  9m50s              deployment-controller  Scaled down replica set nanoparse-b4f4d6f9b from 1 to 0

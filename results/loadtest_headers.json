@@ -1,0 +1,9 @@
+{
+  "per_replica": {
+    "nanoparse-6bfbd4c899-qk7wr": 41,
+    "nanoparse-6bfbd4c899-krw2p": 37
+  },
+  "per_model_version": {
+    "v1": 78
+  }
+}
